@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna - Grêmio Estudantil</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="urna">
+
+        <!-- CABEÇALHO -->
+        <header class="cabecalho">
+            <h1>ELEIÇÃO DO GRÊMIO ESTUDANTIL</h1>
+            <p>ESCOLA LUCÍLIA GROTHE LIBERATO</p>
+        </header>
+
+
+        <!-- ÁREA PRINCIPAL -->
+        <main class="area-votacao">
+
+            <!-- TELA -->
+            <section class="tela">
+
+                <div class="titulo-tela">
+                    <h2>VOTE PARA</h2>
+                    <h3>CHAPA DO GRÊMIO 2027</h3>
+                </div>
+
+                <div class="numero-container">
+
+                    <span class="numero-label">NÚMERO:</span>
+
+                    <div id="numeroVoto" class="numero-voto">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMAÇÕES DA CHAPA -->
+                <div id="informacoesChapa" class="informacoes-chapa">
+
+                    <p id="nomeChapa"></p>
+
+                    <p id="presidente"></p>
+
+                    <p id="vice"></p>
+
+                </div>
+
+
+                <!-- MENSAGEM -->
+                <div id="mensagem" class="mensagem">
+                    DIGITE O NÚMERO DA CHAPA
+                </div>
+
+            </section>
+
+
+            <!-- TECLADO -->
+            <section class="teclado">
+
+                <div class="linha-teclas">
+
+                    <button onclick="digitarNumero('1')">1</button>
+                    <button onclick="digitarNumero('2')">2</button>
+                    <button onclick="digitarNumero('3')">3</button>
+
+                </div>
+
+
+                <div class="linha-teclas">
+
+                    <button onclick="digitarNumero('4')">4</button>
+                    <button onclick="digitarNumero('5')">5</button>
+                    <button onclick="digitarNumero('6')">6</button>
+
+                </div>
+
+
+                <div class="linha-teclas">
+
+                    <button onclick="digitarNumero('7')">7</button>
+                    <button onclick="digitarNumero('8')">8</button>
+                    <button onclick="digitarNumero('9')">9</button>
+
+                </div>
+
+
+                <div class="linha-teclas">
+
+                    <button class="botao-zero" onclick="digitarNumero('0')">
+                        0
+                    </button>
+
+                </div>
+
+
+                <!-- BOTÕES DE AÇÃO -->
+                <div class="botoes-acao">
+
+                    <button class="corrigir" onclick="corrigirVoto()">
+                        CORRIGIR
+                    </button>
+
+                    <button class="confirmar" onclick="confirmarVoto()">
+                        CONFIRMAR
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- RODAPÉ -->
+        <footer>
+            Sistema de votação do Grêmio Estudantil
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

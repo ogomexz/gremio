@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #222;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+.urna {
+    width: 100vw;
+    height: 100vh;
+
+    background: #eeeeee;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    background: #111111;
+    color: white;
+
+    height: 14vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.cabecalho h1 {
+    font-size: 3.5vh;
+    letter-spacing: 1px;
+}
+
+
+.cabecalho p {
+    font-size: 2vh;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
+
+.area-votacao {
+    flex: 1;
+
+    display: flex;
+
+    padding: 3vh 4vw;
+
+    gap: 4vw;
+}
+
+
+/* =========================
+   TELA
+========================= */
+
+.tela {
+    flex: 1;
+
+    background: white;
+
+    border: 4px solid #333;
+    border-radius: 10px;
+
+    padding: 4vh 4vw;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.titulo-tela {
+    text-align: center;
+
+    border-bottom: 2px solid #333;
+
+    padding-bottom: 2vh;
+}
+
+
+.titulo-tela h2 {
+    font-size: 3vh;
+}
+
+
+.titulo-tela h3 {
+    font-size: 2.5vh;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   NÚMERO
+========================= */
+
+.numero-container {
+    margin-top: 4vh;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.numero-label {
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+
+.numero-voto {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.numero-voto span {
+    width: 65px;
+    height: 75px;
+
+    border: 3px solid #111;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 5vh;
+    font-weight: bold;
+
+    background: #fafafa;
+}
+
+
+/* =========================
+   INFORMAÇÕES DA CHAPA
+========================= */
+
+.informacoes-chapa {
+    margin-top: 4vh;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 2vh;
+}
+
+
+.informacoes-chapa p {
+    font-size: 2.8vh;
+}
+
+
+#nomeChapa {
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+
+#presidente {
+    font-weight: bold;
+}
+
+
+#vice {
+    font-weight: bold;
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+.mensagem {
+    margin-top: auto;
+
+    font-size: 2.4vh;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    padding: 2vh;
+
+    border-top: 2px solid #333;
+}
+
+
+/* =========================
+   TECLADO
+========================= */
+
+.teclado {
+    width: 34vw;
+
+    background: #333;
+
+    padding: 3vh 2vw;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 1.5vh;
+}
+
+
+.linha-teclas {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 1vw;
+}
+
+
+.linha-teclas button {
+    width: 7vw;
+    height: 9vh;
+
+    font-size: 4vh;
+
+    font-weight: bold;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #eeeeee;
+
+    cursor: pointer;
+}
+
+
+.linha-teclas button:active {
+    transform: scale(0.95);
+}
+
+
+.botao-zero {
+    width: 7vw !important;
+}
+
+
+/* =========================
+   BOTÕES DE AÇÃO
+========================= */
+
+.botoes-acao {
+    display: flex;
+
+    gap: 1vw;
+
+    margin-top: 2vh;
+}
+
+
+.botoes-acao button {
+    flex: 1;
+
+    height: 8vh;
+
+    border: none;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 2vh;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.corrigir {
+    background: #555555;
+}
+
+
+.confirmar {
+    background: #111111;
+}
+
+
+.botoes-acao button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    height: 5vh;
+
+    background: #111111;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.6vh;
+}

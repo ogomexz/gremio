@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Apuração - Grêmio Estudantil</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #eeeeee;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+        .container {
+
+            width: 90%;
+
+            max-width: 900px;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+        }
+
+
+        h1 {
+
+            text-align: center;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .subtitulo {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            color: #555;
+
+        }
+
+
+        .chapa {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px;
+
+            margin: 12px 0;
+
+            border-radius: 10px;
+
+            background: #eeeeee;
+
+        }
+
+
+        .nome {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+        }
+
+
+        .votos {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+        }
+
+
+        .total {
+
+            margin-top: 30px;
+
+            padding-top: 20px;
+
+            border-top: 2px solid #333;
+
+            text-align: center;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+        }
+
+
+        .botoes {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 30px;
+
+        }
+
+
+        button {
+
+            padding: 15px 25px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        .atualizar {
+
+            background: #222;
+
+            color: white;
+
+        }
+
+
+        .zerar {
+
+            background: #b00000;
+
+            color: white;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+        <h1>
+
+            APURAÇÃO DA ELEIÇÃO
+
+        </h1>
+
+
+        <p class="subtitulo">
+
+            Grêmio Estudantil
+
+        </p>
+
+
+        <div class="chapa">
+
+            <div class="nome">
+
+                Voz Ativa
+
+            </div>
+
+            <div class="votos" id="votos1">
+
+                0 votos
+
+            </div>
+
+        </div>
+
+
+        <div class="chapa">
+
+            <div class="nome">
+
+                Unidos da Barra
+
+            </div>
+
+            <div class="votos" id="votos2">
+
+                0 votos
+
+            </div>
+
+        </div>
+
+
+        <div class="chapa">
+
+            <div class="nome">
+
+                Gaviões
+
+            </div>
+
+            <div class="votos" id="votos3">
+
+                0 votos
+
+            </div>
+
+        </div>
+
+
+        <div class="chapa">
+
+            <div class="nome">
+
+                CHAPA 4
+
+            </div>
+
+            <div class="votos" id="votos4">
+
+                0 votos
+
+            </div>
+
+        </div>
+
+
+        <div class="total">
+
+            TOTAL DE VOTOS:
+
+            <span id="totalVotos">
+
+                0
+
+            </span>
+
+        </div>
+
+
+        <div class="botoes">
+
+            <button
+                class="atualizar"
+                onclick="mostrarVotos()">
+
+                ATUALIZAR
+
+            </button>
+
+
+            <button
+                class="zerar"
+                onclick="zerarVotos()">
+
+                ZERAR VOTOS
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function mostrarVotos() {
+
+            const votos =
+
+                JSON.parse(
+                    localStorage.getItem("votosGremio")
+                ) || {
+
+                    "1": 0,
+                    "2": 0,
+                    "3": 0,
+                    "4": 0
+
+                };
+
+
+            document.getElementById("votos1").textContent =
+                votos["1"] + " votos";
+
+
+            document.getElementById("votos2").textContent =
+                votos["2"] + " votos";
+
+
+            document.getElementById("votos3").textContent =
+                votos["3"] + " votos";
+
+
+            document.getElementById("votos4").textContent =
+                votos["4"] + " votos";
+
+
+            const total =
+
+                votos["1"] +
+                votos["2"] +
+                votos["3"] +
+                votos["4"];
+
+
+            document.getElementById("totalVotos").textContent =
+                total;
+
+        }
+
+
+        function zerarVotos() {
+
+            const confirmar = confirm(
+
+                "ATENÇÃO!\n\n" +
+
+                "Isso vai apagar TODOS os votos.\n\n" +
+
+                "Deseja realmente zerar a apuração?"
+
+            );
+
+
+            if (confirmar) {
+
+                localStorage.removeItem(
+                    "votosGremio"
+                );
+
+
+                mostrarVotos();
+
+            }
+
+        }
+
+
+        mostrarVotos();
+
+    </script>
+
+
+</body>
+
+</html>
